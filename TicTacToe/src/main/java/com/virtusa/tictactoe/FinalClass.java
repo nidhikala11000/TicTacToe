@@ -58,7 +58,7 @@ public class FinalClass {
 					if (!moveOk) {
 						System.out.println("Cell Already filled !");
 					}
-					System.out.println("Your Move: ");
+					System.out.println("Your Move ( you have to enter position as eg: 1 2 )");
 					do {
 						try {
 							x = scanner.nextInt();
