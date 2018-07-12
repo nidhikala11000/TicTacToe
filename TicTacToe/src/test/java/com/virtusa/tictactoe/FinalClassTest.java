@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.virtusa.tictactoe;
 
 import static org.junit.Assert.*;
