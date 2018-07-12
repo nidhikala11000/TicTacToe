@@ -11,7 +11,7 @@ import junit.framework.Assert;
 public class BoardTest {
 
 	@Test
-	public void testIsGameOver() { // if any of the player won then game should be over
+	public void testIsGameOver() { // to check whether game is over or not
 		Board b = new Board();
 		b.placeAMove(new Point(0, 0), Board.PLAYER_X);
 		b.placeAMove(new Point(0, 1), Board.PLAYER_O);
@@ -66,6 +66,23 @@ public class BoardTest {
 		b.minimax(0, Board.PLAYER_X);
 		Point p = new Point(2, 0);
 		assertEquals(p.toString(), b.computerMove.toString());
+	}
+
+	@Test
+	public void testDraw() { //it will check for draw 
+	   Board b = new Board();
+		b.placeAMove(new Point(0, 0), Board.PLAYER_X);
+		b.placeAMove(new Point(0, 1), Board.PLAYER_O);
+		b.placeAMove(new Point(0, 2), Board.PLAYER_X);
+		b.placeAMove(new Point(1, 0), Board.PLAYER_X);
+		b.placeAMove(new Point(1, 1), Board.PLAYER_X);
+		b.placeAMove(new Point(1, 2), Board.PLAYER_O);
+		b.placeAMove(new Point(2, 0), Board.PLAYER_O);
+		b.placeAMove(new Point(2, 1), Board.PLAYER_X);
+		b.placeAMove(new Point(2, 2), Board.PLAYER_O);
+		assertFalse(b.hasPlayerWon(Board.PLAYER_X));
+		assertFalse(b.hasPlayerWon(Board.PLAYER_O));
+	   
 	}
 
 	@Test
